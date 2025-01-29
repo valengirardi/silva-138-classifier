@@ -2,8 +2,6 @@ conda activate qiime2-amplicon-2024.10
 
 cd /users/valentinagirardi/downloads/SILVA138-REFNR99
 
-# (script sacado de https://forum.qiime2.org/t/processing-filtering-and-evaluating-the-silva-database-and-other-reference-sequence-data-with-rescript/15494)
-
 # Descargar datos de SILVA
 qiime rescript get-silva-data \
     --p-version '138.1' \
@@ -44,6 +42,7 @@ qiime feature-classifier fit-classifier-naive-bayes \
   --i-reference-taxonomy silva-138.1-ssu-nr99-tax-derep-uniq.qza \
   --o-classifier silva-138.1-ssu-nr99-classifier.qza
 
+# -----------------------------------------------------------------------
 # AHORA SI QUIERO HACERLO SÓLO PARA LA REGIÓN V3-V4:
 # Extraer la región V3-V4 usando primers específicos (son los de NOVOGENE)
 qiime feature-classifier extract-reads \
